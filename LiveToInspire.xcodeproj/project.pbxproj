@@ -7,21 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0628D8F01D4CEEEB00E56F88 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0628D8EF1D4CEEEB00E56F88 /* FeedVC.swift */; };
+		0628D8F21D4D00A900E56F88 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0628D8F11D4D00A900E56F88 /* FeedCell.swift */; };
+		06EB15C41D48723C006218AA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EB15C31D48723C006218AA /* FBSDKCoreKit.framework */; };
 		06EC67421D45361D0032ECC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC67411D45361D0032ECC8 /* AppDelegate.swift */; };
-		06EC67441D45361D0032ECC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC67431D45361D0032ECC8 /* ViewController.swift */; };
+		06EC67441D45361D0032ECC8 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC67431D45361D0032ECC8 /* SignInVC.swift */; };
 		06EC67471D45361D0032ECC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC67451D45361D0032ECC8 /* Main.storyboard */; };
 		06EC67491D45361D0032ECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EC67481D45361D0032ECC8 /* Assets.xcassets */; };
 		06EC674C1D45361D0032ECC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC674A1D45361D0032ECC8 /* LaunchScreen.storyboard */; };
+		06EC675A1D453DD90032ECC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06EC67591D453DD90032ECC8 /* GoogleService-Info.plist */; };
+		06EC67611D45623F0032ECC8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EC67601D45623F0032ECC8 /* Bolts.framework */; };
+		06EC67631D4565C20032ECC8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EC67621D4565C20032ECC8 /* FBSDKLoginKit.framework */; };
+		06EC67681D4574F90032ECC8 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06EC67641D4574F90032ECC8 /* NotoSans-Bold.ttf */; };
+		06EC67691D4574F90032ECC8 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06EC67651D4574F90032ECC8 /* NotoSans-BoldItalic.ttf */; };
+		06EC676A1D4574F90032ECC8 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06EC67661D4574F90032ECC8 /* NotoSans-Italic.ttf */; };
+		06EC676B1D4574F90032ECC8 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06EC67671D4574F90032ECC8 /* NotoSans-Regular.ttf */; };
+		06EC676E1D46DD160032ECC8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC676D1D46DD160032ECC8 /* Constants.swift */; };
+		06EC67701D46DDD60032ECC8 /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC676F1D46DDD60032ECC8 /* MaterialTextField.swift */; };
+		06EC67721D46E2A30032ECC8 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC67711D46E2A30032ECC8 /* MaterialButton.swift */; };
+		EB8CCC04D160C35082307F6C /* Pods_LiveToInspire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F32B95C8F9D49CF2FD43452 /* Pods_LiveToInspire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0628D8EF1D4CEEEB00E56F88 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		0628D8F11D4D00A900E56F88 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		06EB15C31D48723C006218AA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		06EC673E1D45361D0032ECC8 /* LiveToInspire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveToInspire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC67411D45361D0032ECC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		06EC67431D45361D0032ECC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		06EC67431D45361D0032ECC8 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		06EC67461D45361D0032ECC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06EC67481D45361D0032ECC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06EC674B1D45361D0032ECC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06EC674D1D45361D0032ECC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06EC67591D453DD90032ECC8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		06EC67601D45623F0032ECC8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		06EC67621D4565C20032ECC8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		06EC67641D4574F90032ECC8 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		06EC67651D4574F90032ECC8 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		06EC67661D4574F90032ECC8 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
+		06EC67671D4574F90032ECC8 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		06EC676D1D46DD160032ECC8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		06EC676F1D46DDD60032ECC8 /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		06EC67711D46E2A30032ECC8 /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		0F32B95C8F9D49CF2FD43452 /* Pods_LiveToInspire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveToInspire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFDDE7D238ECD99D5FB16DF9 /* Pods-LiveToInspire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveToInspire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiveToInspire/Pods-LiveToInspire.debug.xcconfig"; sourceTree = "<group>"; };
+		FB2AFF2A8A0644C1AEA39188 /* Pods-LiveToInspire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveToInspire.release.xcconfig"; path = "Pods/Target Support Files/Pods-LiveToInspire/Pods-LiveToInspire.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +59,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB8CCC04D160C35082307F6C /* Pods_LiveToInspire.framework in Frameworks */,
+				06EB15C41D48723C006218AA /* FBSDKCoreKit.framework in Frameworks */,
+				06EC67631D4565C20032ECC8 /* FBSDKLoginKit.framework in Frameworks */,
+				06EC67611D45623F0032ECC8 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +74,8 @@
 			children = (
 				06EC67401D45361D0032ECC8 /* LiveToInspire */,
 				06EC673F1D45361D0032ECC8 /* Products */,
+				50D1E59275F2F543925D1F91 /* Pods */,
+				2842D43418FAC2CDDCC49375 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +90,100 @@
 		06EC67401D45361D0032ECC8 /* LiveToInspire */ = {
 			isa = PBXGroup;
 			children = (
+				06EC675F1D45620A0032ECC8 /* Frameworks */,
+				06EC67581D45365E0032ECC8 /* Resources */,
+				06EC67571D4536580032ECC8 /* Services */,
+				06EC67561D4536530032ECC8 /* Utils */,
+				06EC67551D45364D0032ECC8 /* Controller */,
+				06EC67541D4536460032ECC8 /* View */,
+				06EC67531D45363F0032ECC8 /* Model */,
 				06EC67411D45361D0032ECC8 /* AppDelegate.swift */,
-				06EC67431D45361D0032ECC8 /* ViewController.swift */,
 				06EC67451D45361D0032ECC8 /* Main.storyboard */,
 				06EC67481D45361D0032ECC8 /* Assets.xcassets */,
 				06EC674A1D45361D0032ECC8 /* LaunchScreen.storyboard */,
 				06EC674D1D45361D0032ECC8 /* Info.plist */,
+				06EC67591D453DD90032ECC8 /* GoogleService-Info.plist */,
 			);
 			path = LiveToInspire;
+			sourceTree = "<group>";
+		};
+		06EC67531D45363F0032ECC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		06EC67541D4536460032ECC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				06EC676F1D46DDD60032ECC8 /* MaterialTextField.swift */,
+				06EC67711D46E2A30032ECC8 /* MaterialButton.swift */,
+				0628D8F11D4D00A900E56F88 /* FeedCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		06EC67551D45364D0032ECC8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				06EC67431D45361D0032ECC8 /* SignInVC.swift */,
+				0628D8EF1D4CEEEB00E56F88 /* FeedVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		06EC67561D4536530032ECC8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				06EC676D1D46DD160032ECC8 /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		06EC67571D4536580032ECC8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		06EC67581D45365E0032ECC8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				06EC67641D4574F90032ECC8 /* NotoSans-Bold.ttf */,
+				06EC67651D4574F90032ECC8 /* NotoSans-BoldItalic.ttf */,
+				06EC67661D4574F90032ECC8 /* NotoSans-Italic.ttf */,
+				06EC67671D4574F90032ECC8 /* NotoSans-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		06EC675F1D45620A0032ECC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06EB15C31D48723C006218AA /* FBSDKCoreKit.framework */,
+				06EC67621D4565C20032ECC8 /* FBSDKLoginKit.framework */,
+				06EC67601D45623F0032ECC8 /* Bolts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2842D43418FAC2CDDCC49375 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F32B95C8F9D49CF2FD43452 /* Pods_LiveToInspire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50D1E59275F2F543925D1F91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFDDE7D238ECD99D5FB16DF9 /* Pods-LiveToInspire.debug.xcconfig */,
+				FB2AFF2A8A0644C1AEA39188 /* Pods-LiveToInspire.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06EC67501D45361D0032ECC8 /* Build configuration list for PBXNativeTarget "LiveToInspire" */;
 			buildPhases = (
+				5055B0A0297987BB196F8A3C /* [CP] Check Pods Manifest.lock */,
 				06EC673A1D45361D0032ECC8 /* Sources */,
 				06EC673B1D45361D0032ECC8 /* Frameworks */,
 				06EC673C1D45361D0032ECC8 /* Resources */,
+				D2880A9B18D8FB45F9E1BE01 /* [CP] Embed Pods Frameworks */,
+				329C0B353DD979858ABCFDF8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +221,7 @@
 				TargetAttributes = {
 					06EC673D1D45361D0032ECC8 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = ZZ4594KTE7;
 					};
 				};
 			};
@@ -122,21 +248,79 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06EC67691D4574F90032ECC8 /* NotoSans-BoldItalic.ttf in Resources */,
 				06EC674C1D45361D0032ECC8 /* LaunchScreen.storyboard in Resources */,
+				06EC675A1D453DD90032ECC8 /* GoogleService-Info.plist in Resources */,
 				06EC67491D45361D0032ECC8 /* Assets.xcassets in Resources */,
+				06EC676B1D4574F90032ECC8 /* NotoSans-Regular.ttf in Resources */,
+				06EC676A1D4574F90032ECC8 /* NotoSans-Italic.ttf in Resources */,
+				06EC67681D4574F90032ECC8 /* NotoSans-Bold.ttf in Resources */,
 				06EC67471D45361D0032ECC8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		329C0B353DD979858ABCFDF8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiveToInspire/Pods-LiveToInspire-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5055B0A0297987BB196F8A3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D2880A9B18D8FB45F9E1BE01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LiveToInspire/Pods-LiveToInspire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		06EC673A1D45361D0032ECC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06EC67441D45361D0032ECC8 /* ViewController.swift in Sources */,
+				0628D8F21D4D00A900E56F88 /* FeedCell.swift in Sources */,
+				0628D8F01D4CEEEB00E56F88 /* FeedVC.swift in Sources */,
+				06EC67441D45361D0032ECC8 /* SignInVC.swift in Sources */,
 				06EC67421D45361D0032ECC8 /* AppDelegate.swift in Sources */,
+				06EC67701D46DDD60032ECC8 /* MaterialTextField.swift in Sources */,
+				06EC676E1D46DD160032ECC8 /* Constants.swift in Sources */,
+				06EC67721D46E2A30032ECC8 /* MaterialButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,23 +433,41 @@
 		};
 		06EC67511D45361D0032ECC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFDDE7D238ECD99D5FB16DF9 /* Pods-LiveToInspire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/LiveToInspire",
+				);
 				INFOPLIST_FILE = LiveToInspire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iMoko.LiveToInspire;
+				PRODUCT_BUNDLE_IDENTIFIER = LiveToInspire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		06EC67521D45361D0032ECC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB2AFF2A8A0644C1AEA39188 /* Pods-LiveToInspire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/LiveToInspire",
+				);
 				INFOPLIST_FILE = LiveToInspire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iMoko.LiveToInspire;
+				PRODUCT_BUNDLE_IDENTIFIER = LiveToInspire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -288,6 +490,7 @@
 				06EC67521D45361D0032ECC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
