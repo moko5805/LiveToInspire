@@ -39,32 +39,34 @@ class SignInVC: UIViewController {
     
     //I will create a custom view for my facebook login button and this will become an IBAction
     @IBAction func fbLoginBtnPressed(sender: UIButton!) {
-        let facebookLogin: FBSDKLoginManager = FBSDKLoginManager()
         
-        facebookLogin.logInWithReadPermissions(["public_profile","email","user_friends"], fromViewController: presentedViewController) { (fbResult, fbError) in
-            if fbError != nil {
-                print("Facebook login failed!\(fbError)")
+        let facebookLogin = FBSDKLoginManager()
+        
+        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self) { (result, error) in
+            if error != nil {
+                print("Unable to authenticate with Facebook - \(error)")
+            } else if result.isCancelled == true {
+                print("user canceled Facebook authentication")
             } else {
-                //get an access token for the signed-in user
-                if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
-                    print("Successfully logged in to Facebook\(accessToken)")
-                    //and exchange it for a Firebase credential
-                    let credential = FIRFacebookAuthProvider.credentialWithAccessToken(accessToken)
-                    
-                    //authenticate with Firebase using the Firebase credential
-                    FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
-                        if error != nil {
-                            print("Login failed\(error)")
-                            //create alert center later
-                        } else {
-                            print("user logged in to Firebase witj user id \(user!.uid)")
-                            NSUserDefaults.standardUserDefaults().setValue(user!.uid, forKey: KEY_UID)
-                            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                        }
-                    }
-                }
+                print("Successfully autheticated with Facebook")
+                let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
+                //now that we authenticated with FB let's authenticate with Firebase
+                self.firebaseAuthenticate(credential)
+                
             }
         }
+        
+        
+    }
+    
+    func firebaseAuthenticate(credential: FIRAuthCredential) {
+        FIRAuth.auth()?.signInWithCredential(credential, completion: { (user, error) in
+            if error != nil {
+                print("unable to authenticate with Firebase")
+            } else {
+                print("successfully authenticated with Firebase")
+            }
+        })
     }
     
     @IBAction func attemptLogin(sender: UIButton!) {
