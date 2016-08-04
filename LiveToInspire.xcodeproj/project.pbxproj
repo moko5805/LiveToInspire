@@ -11,7 +11,7 @@
 		0628D8F21D4D00A900E56F88 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0628D8F11D4D00A900E56F88 /* FeedCell.swift */; };
 		06EB15C41D48723C006218AA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EB15C31D48723C006218AA /* FBSDKCoreKit.framework */; };
 		06EC67421D45361D0032ECC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC67411D45361D0032ECC8 /* AppDelegate.swift */; };
-		06EC67441D45361D0032ECC8 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC67431D45361D0032ECC8 /* SignInVC.swift */; };
+		06EC67441D45361D0032ECC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC67431D45361D0032ECC8 /* ViewController.swift */; };
 		06EC67471D45361D0032ECC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC67451D45361D0032ECC8 /* Main.storyboard */; };
 		06EC67491D45361D0032ECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06EC67481D45361D0032ECC8 /* Assets.xcassets */; };
 		06EC674C1D45361D0032ECC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06EC674A1D45361D0032ECC8 /* LaunchScreen.storyboard */; };
@@ -34,7 +34,7 @@
 		06EB15C31D48723C006218AA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		06EC673E1D45361D0032ECC8 /* LiveToInspire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveToInspire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC67411D45361D0032ECC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		06EC67431D45361D0032ECC8 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		06EC67431D45361D0032ECC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		06EC67461D45361D0032ECC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06EC67481D45361D0032ECC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06EC674B1D45361D0032ECC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		06EC67551D45364D0032ECC8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				06EC67431D45361D0032ECC8 /* SignInVC.swift */,
+				06EC67431D45361D0032ECC8 /* ViewController.swift */,
 				0628D8EF1D4CEEEB00E56F88 /* FeedVC.swift */,
 			);
 			name = Controller;
@@ -316,7 +316,7 @@
 			files = (
 				0628D8F21D4D00A900E56F88 /* FeedCell.swift in Sources */,
 				0628D8F01D4CEEEB00E56F88 /* FeedVC.swift in Sources */,
-				06EC67441D45361D0032ECC8 /* SignInVC.swift in Sources */,
+				06EC67441D45361D0032ECC8 /* ViewController.swift in Sources */,
 				06EC67421D45361D0032ECC8 /* AppDelegate.swift in Sources */,
 				06EC67701D46DDD60032ECC8 /* MaterialTextField.swift in Sources */,
 				06EC676E1D46DD160032ECC8 /* Constants.swift in Sources */,

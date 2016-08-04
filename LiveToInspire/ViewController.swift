@@ -12,7 +12,7 @@ import FBSDKCoreKit
 import Firebase
 
 
-class SignInVC: UIViewController {
+class ViewController: UIViewController {
     
     @IBOutlet weak var emailFiled: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -36,6 +36,7 @@ class SignInVC: UIViewController {
             self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
         }
     }
+    
     
     //I will create a custom view for my facebook login button and this will become an IBAction
     @IBAction func fbLoginBtnPressed(sender: UIButton!) {
@@ -65,6 +66,10 @@ class SignInVC: UIViewController {
                 print("unable to authenticate with Firebase")
             } else {
                 print("successfully authenticated with Firebase")
+                if let user = user {
+                    self.saveUserIdToDisk(user.uid)
+                }
+                
             }
         })
     }
@@ -89,15 +94,17 @@ class SignInVC: UIViewController {
                                 self.showErrorAlert("could not create account", msg: "problem creating account, try something else")
                                 
                             } else {
-                                
-                                NSUserDefaults.standardUserDefaults().setValue(user!.uid, forKey: KEY_UID)
-                                
-                                FIRAuth.auth()?.signInWithEmail(email, password: pwd, completion: { (nil) in
+                                if let user = user {
                                     
-                                })
-                                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                                    FIRAuth.auth()?.signInWithEmail(email, password: pwd, completion: { (nil) in
+                                        
+                                    })
+                                    self.saveUserIdToDisk(user.uid)
+                                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                                }
                             }
                         }
+                        
                     } else {
                         self.showErrorAlert("could not login", msg: "please check your username or password")
                     }
@@ -119,6 +126,10 @@ class SignInVC: UIViewController {
         let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func saveUserIdToDisk(userUid: String) {
+        NSUserDefaults.standardUserDefaults().setValue(userUid, forKey: KEY_UID)
     }
 }
 
