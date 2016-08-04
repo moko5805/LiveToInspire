@@ -70,6 +70,7 @@ class SignInVC: UIViewController {
     }
     
     @IBAction func attemptLogin(sender: UIButton!) {
+        
         if let email = emailFiled.text where email != "", let pwd = passwordField.text where pwd != "" {
             
             FIRAuth.auth()?.signInWithEmail(email, password: pwd) { (user, error) in
@@ -78,22 +79,23 @@ class SignInVC: UIViewController {
                     
                     //to find out the error code for nonexisted accounts
                     print(error)
-                    
                     if error!.code == STATUS_CODE_ACCOUNT_NONEXIST {
                         
                         //Create user
                         FIRAuth.auth()?.createUserWithEmail(email, password: pwd) { (user, error) in
                             
                             if error != nil {
+                                
                                 self.showErrorAlert("could not create account", msg: "problem creating account, try something else")
+                                
                             } else {
+                                
                                 NSUserDefaults.standardUserDefaults().setValue(user!.uid, forKey: KEY_UID)
                                 
                                 FIRAuth.auth()?.signInWithEmail(email, password: pwd, completion: { (nil) in
                                     
                                 })
                                 self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                                
                             }
                         }
                     } else {
@@ -101,6 +103,7 @@ class SignInVC: UIViewController {
                     }
                     
                 } else {
+                    print("email user authenticated with Firebase")
                     self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                 }
             }
