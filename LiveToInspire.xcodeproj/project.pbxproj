@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060DD7A81D53AA3A0010D856 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060DD7A71D53AA3A0010D856 /* DataService.swift */; };
 		0628D8F01D4CEEEB00E56F88 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0628D8EF1D4CEEEB00E56F88 /* FeedVC.swift */; };
 		0628D8F21D4D00A900E56F88 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0628D8F11D4D00A900E56F88 /* FeedCell.swift */; };
 		06EB15C41D48723C006218AA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EB15C31D48723C006218AA /* FBSDKCoreKit.framework */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060DD7A71D53AA3A0010D856 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		0628D8EF1D4CEEEB00E56F88 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		0628D8F11D4D00A900E56F88 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		06EB15C31D48723C006218AA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		06EC67571D4536580032ECC8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				060DD7A71D53AA3A0010D856 /* DataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				06EC67701D46DDD60032ECC8 /* MaterialTextField.swift in Sources */,
 				06EC676E1D46DD160032ECC8 /* Constants.swift in Sources */,
 				06EC67721D46E2A30032ECC8 /* MaterialButton.swift in Sources */,
+				060DD7A81D53AA3A0010D856 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

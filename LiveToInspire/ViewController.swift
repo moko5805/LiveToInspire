@@ -23,11 +23,6 @@ class ViewController: UIViewController {
 
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -36,7 +31,6 @@ class ViewController: UIViewController {
             self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
         }
     }
-    
     
     //I will create a custom view for my facebook login button and this will become an IBAction
     @IBAction func fbLoginBtnPressed(sender: UIButton!) {
@@ -56,8 +50,6 @@ class ViewController: UIViewController {
                 
             }
         }
-        
-        
     }
     
     func firebaseAuthenticate(credential: FIRAuthCredential) {
@@ -67,58 +59,41 @@ class ViewController: UIViewController {
             } else {
                 print("successfully authenticated with Firebase")
                 if let user = user {
-                    self.saveUserIdToDisk(user.uid)
+                    let userData = ["provider": credential.provider]
+                    self.completeSignIn(user.uid, userData: userData)
                 }
                 
-            }
+             }
         })
     }
     
     @IBAction func attemptLogin(sender: UIButton!) {
         
         if let email = emailFiled.text where email != "", let pwd = passwordField.text where pwd != "" {
-            
-            FIRAuth.auth()?.signInWithEmail(email, password: pwd) { (user, error) in
-                
-                if error != nil {
-                    
-                    //to find out the error code for nonexisted accounts
-                    print(error)
-                    if error!.code == STATUS_CODE_ACCOUNT_NONEXIST {
-                        
-                        //Create user
-                        FIRAuth.auth()?.createUserWithEmail(email, password: pwd) { (user, error) in
-                            
-                            if error != nil {
-                                
-                                self.showErrorAlert("could not create account", msg: "problem creating account, try something else")
-                                
-                            } else {
-                                if let user = user {
-                                    
-                                    FIRAuth.auth()?.signInWithEmail(email, password: pwd, completion: { (nil) in
-                                        
-                                    })
-                                    self.saveUserIdToDisk(user.uid)
-                                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                                }
-                            }
-                        }
-                        
-                    } else {
-                        self.showErrorAlert("could not login", msg: "please check your username or password")
-                    }
-                    
-                } else {
+            FIRAuth.auth()?.signInWithEmail(email, password: pwd, completion: { (user, error) in
+                if error == nil {
                     print("email user authenticated with Firebase")
-                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                    if let user = user {
+                        let userDate = ["provider": user.providerID]
+                        self.completeSignIn(user.uid, userData: userDate)
+                    }
+                } else {
+                    FIRAuth.auth()?.createUserWithEmail(email, password: pwd, completion: { (user, error) in
+                        if error != nil {
+                            print("unable to authenticated email using with Firebase")
+                        } else {
+                            print("successfully created new user and authenticated with Firebase")
+                            if let user = user {
+                                let userData = ["provider": user.providerID]
+                                self.completeSignIn(user.uid, userData: userData)
+                            }
+                            
+                        }
+                    })
                 }
-            }
-            
-        } else {
-            showErrorAlert("Email and Password Required", msg: "You Must Enter Email and Password")
+            })
         }
-        
+            
     }
     
     func showErrorAlert(title: String, msg: String) {
@@ -128,8 +103,11 @@ class ViewController: UIViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    func saveUserIdToDisk(userUid: String) {
+    func completeSignIn(userUid: String, userData: Dictionary<String, String>) {
+        DataService.ds.createFirebaseDBUser(userUid, userData: userData)
         NSUserDefaults.standardUserDefaults().setValue(userUid, forKey: KEY_UID)
+        print("Data/user uid was saved to the disk")
+        performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
     }
 }
 

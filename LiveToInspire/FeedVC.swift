@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -32,5 +33,18 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return tableView.dequeueReusableCellWithIdentifier("FeedCell") as! FeedCell
     }
     
+    
+    
+    
+    
+    
+    
+//    @IBAction func signoutTapped(sender: AnyObject) {
+//        NSUserDefaults.standardUserDefaults().removeObjectForKey(KEY_UID)
+//        print("user uid removed from the disk")
+//        try! FIRAuth.auth()?.signOut()
+//        performSegueWithIdentifier("goToSignInpage", sender: nil)
+//    }
+//    
 
 }
