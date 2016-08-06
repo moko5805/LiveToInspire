@@ -17,11 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailFiled: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -104,7 +101,9 @@ class ViewController: UIViewController {
     }
     
     func completeSignIn(userUid: String, userData: Dictionary<String, String>) {
+        
         DataService.ds.createFirebaseDBUser(userUid, userData: userData)
+        
         NSUserDefaults.standardUserDefaults().setValue(userUid, forKey: KEY_UID)
         print("Data/user uid was saved to the disk")
         performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)

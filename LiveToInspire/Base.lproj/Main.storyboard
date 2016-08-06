@@ -148,7 +148,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="366" id="ECV-07-Lk1" customClass="FeedCell" customModule="LiveToInspire" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedCell" id="ECV-07-Lk1" customClass="FeedCell" customModule="LiveToInspire" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="366"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ECV-07-Lk1" id="3YU-wP-56h">
@@ -171,26 +171,26 @@
                                                                                 <constraint firstAttribute="height" constant="50" id="qyW-J3-b0M"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="moko5805" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="aCj-I4-UkU">
-                                                                            <rect key="frame" x="60" y="0.0" width="58" height="50"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="moko5805" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="aCj-I4-UkU">
+                                                                            <rect key="frame" x="60" y="0.0" width="61" height="50"/>
                                                                             <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                                             <color key="textColor" red="1" green="0.38823529410000002" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="DRZ-RG-YV4">
-                                                                            <rect key="frame" x="128" y="0.0" width="107" height="50"/>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="DRZ-RG-YV4">
+                                                                            <rect key="frame" x="131" y="0.0" width="105" height="50"/>
                                                                         </imageView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qvT-0S-ENn">
-                                                                            <rect key="frame" x="244" y="0.0" width="76" height="50"/>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qvT-0S-ENn">
+                                                                            <rect key="frame" x="246" y="0.0" width="74" height="50"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1444" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpS-5P-2d4">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="76" height="20"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="74" height="24"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhW-TW-nWy">
-                                                                                    <rect key="frame" x="0.0" y="20" width="76" height="30"/>
+                                                                                    <rect key="frame" x="0.0" y="24" width="74" height="27"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                                                                     <color key="textColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -243,11 +243,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="caption" destination="g76-SC-ndP" id="ALZ-ua-lEh"/>
+                                            <outlet property="descriptionText" destination="g76-SC-ndP" id="xwJ-Ih-dwy"/>
                                             <outlet property="likesLbl" destination="WpS-5P-2d4" id="9U7-ng-B0P"/>
-                                            <outlet property="postImg" destination="Scg-gw-bk8" id="BIu-JN-Aez"/>
+                                            <outlet property="postImg" destination="Scg-gw-bk8" id="ytj-ri-rlP"/>
                                             <outlet property="profileImage" destination="mIF-rx-ohB" id="XtU-a4-bYD"/>
-                                            <outlet property="usernameLbl" destination="aCj-I4-UkU" id="412-Si-zwR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

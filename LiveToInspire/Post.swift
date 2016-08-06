@@ -10,13 +10,13 @@ import Foundation
 
 class Post {
     
-    private var _likes: Int?
+    private var _likes: Int!
     private var _postDescription: String!
     private var _imageUrl: String?
     private var _username: String!
     private var _postKey: String!
     
-    var likes: Int? {
+    var likes: Int {
         return _likes
     }
     
