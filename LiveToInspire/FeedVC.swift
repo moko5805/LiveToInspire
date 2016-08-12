@@ -9,10 +9,17 @@
 import UIKit
 import Firebase
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var postField: MaterialTextField!
+    @IBOutlet weak var imageSelectorImage: UIImageView!
+    
+    var imageSelected = false
+    
     var posts = [Post]()
+    var imagePicker: UIImagePickerController!
+    
     static var imageCache = NSCache()
 
     override func viewDidLoad() {
@@ -22,6 +29,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         
         tableView.estimatedRowHeight = 366
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         
         DataService.ds.REF_POSTS.observeEventType(.Value, withBlock: { snapshot in
             self.posts = []
@@ -54,20 +63,19 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let post = posts[indexPath.row]
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("FeedCell") as? FeedCell {
-            
             cell.request?.cancel()
             
-            var img : UIImage?
-            
-            //let get image from cache
-            if let imgUrl = post.imageUrl {
-                img = FeedVC.imageCache.objectForKey(imgUrl) as? UIImage
+            if post.imageUrl != nil {
+                
+                let img = FeedVC.imageCache.objectForKey(post.imageUrl!) as? UIImage
+                cell.configureCell(post, img: img)
+                return cell
+            } else {
+                cell.configureCell(post)
+                return cell
             }
             
-            //passing the image from cache if it exists
-            cell.configureCell(post, img: img)
             
-            return cell
         } else {
             return FeedCell()
         }
@@ -86,7 +94,63 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let img = info[UIImagePickerControllerEditedImage] as? UIImage {
+            imagePicker.dismissViewControllerAnimated(true, completion: nil)
+            imageSelectorImage.image = img
+            imageSelected = true
+        } else {
+            print("a valid image wasn't selected")
+        }
+    }
     
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func selectImage(sender: UITapGestureRecognizer) {
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func makePost(sender: AnyObject) {
+        
+        guard let postDesc = postField.text where postDesc != "" else {
+            print("post description must be entered")
+            return
+        }
+//uploading image is not mandatory to make a post at this point in the program
+//        guard let postImg = imageSelectorImage.image else {
+//            print("image must be entered")
+//        }
+
+        if let img = imageSelectorImage.image where imageSelected == true {
+            if let imageData = UIImageJPEGRepresentation(img, 0.2) {
+                
+                let imgUid = NSUUID().UUIDString
+                let metadata = FIRStorageMetadata()
+                metadata.contentType = "image/jpeg"
+                
+                DataService.ds.REF_POST_IMAGES.child(imgUid).putData(imageData, metadata: metadata, completion: { (metadata, error) in
+                    
+                    if error != nil {
+                        print("unable to upload image to firebase storage")
+                    } else {
+                        print("image was successfully uploaded to firebase storage")
+                        let downloadURL = metadata?.downloadURL()?.absoluteString
+                        
+                    }
+                })
+                
+                
+            }
+        }
+        
+        
+        
+        
+        
+        
+    }
     
     
     

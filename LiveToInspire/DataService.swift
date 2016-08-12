@@ -1,25 +1,28 @@
-//
 //  DataService.swift
 //  LiveToInspire
 //
 //  Created by Mostafa S Taheri on 8/4/16.
 //  Copyright © 2016 Mostafa S Taheri. All rights reserved.
-//
 
 import Foundation
 import Firebase
 
+
 //url to the root of database
 let DB_BASE = FIRDatabase.database().reference()
+let DB_STORAGE = FIRStorage.storage().reference()
 
 class DataService {
     
     static let ds = DataService()
     
+    //DB references
     private var _REF_BASE = DB_BASE
     private var _REF_POSTS = DB_BASE.child("posts")
     private var _REF_USRES = DB_BASE.child("users")
     
+    //storage references
+    private var _REF_POST_IMAGES = DB_STORAGE.child("post-pics")
     
     var REF_BASE: FIRDatabaseReference {
         return _REF_BASE
@@ -31,6 +34,10 @@ class DataService {
     
     var REF_USRES: FIRDatabaseReference {
         return _REF_USRES
+    }
+    
+    var REF_POST_IMAGES: FIRStorageReference {
+        return _REF_POST_IMAGES
     }
     
     func createFirebaseDBUser(uid: String, userData: Dictionary<String, String>) {

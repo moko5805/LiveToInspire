@@ -1,4 +1,3 @@
-//
 //  ViewController.swift
 //  LiveToInspire
 //
@@ -10,7 +9,6 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
-
 
 class ViewController: UIViewController {
     
