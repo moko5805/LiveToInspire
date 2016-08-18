@@ -63,7 +63,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         let post = posts[indexPath.row]
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("FeedCell") as? FeedCell {
-            cell.request?.cancel()
             
             if post.imageUrl != nil {
                 
@@ -95,7 +94,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let img = info[UIImagePickerControllerEditedImage] as? UIImage {
+        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePicker.dismissViewControllerAnimated(true, completion: nil)
             imageSelectorImage.image = img
             imageSelected = true
@@ -118,10 +117,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             print("post description must be entered")
             return
         }
-//uploading image is not mandatory to make a post at this point in the program
-//        guard let postImg = imageSelectorImage.image else {
-//            print("image must be entered")
-//        }
 
         if let img = imageSelectorImage.image where imageSelected == true {
             if let imageData = UIImageJPEGRepresentation(img, 0.2) {
@@ -137,19 +132,30 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     } else {
                         print("image was successfully uploaded to firebase storage")
                         let downloadURL = metadata?.downloadURL()?.absoluteString
-                        
+                        if let url = downloadURL {
+                            self.postToFirebase(url)
+                        }
                     }
                 })
-                
-                
             }
         }
+    }
+    
+    func postToFirebase(imgUrl: String) {
+        let post: Dictionary<String, AnyObject> = [
+        "caption": postField.text!,
+        "imageUrl": imgUrl,
+        "likes": 0
+        ]
         
+        let firNewPostRef = DataService.ds.REF_POSTS.childByAutoId()
+        firNewPostRef.setValue(post)
         
+        postField.text = ""
+        imageSelected = false
+        imageSelectorImage.image = UIImage(named: "camera")
         
-        
-        
-        
+        tableView.reloadData()
     }
     
     

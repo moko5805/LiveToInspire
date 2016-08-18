@@ -36,6 +36,14 @@ class DataService {
         return _REF_USRES
     }
     
+    var REF_USRE_CURRENT: FIRDatabaseReference {
+        //user ID value for the currenly logged in user
+        let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
+        let user = REF_USRES.child(uid)
+        
+        return user
+    }
+    
     var REF_POST_IMAGES: FIRStorageReference {
         return _REF_POST_IMAGES
     }
@@ -43,5 +51,6 @@ class DataService {
     func createFirebaseDBUser(uid: String, userData: Dictionary<String, String>) {
         REF_USRES.child(uid).updateChildValues(userData)
     }
+    
 }
 

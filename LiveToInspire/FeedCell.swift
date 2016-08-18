@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import Firebase
 
 class FeedCell: UITableViewCell {
@@ -16,10 +15,14 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var likesLbl: UILabel!
+    @IBOutlet weak var usernameLbl: UILabel!
+    @IBOutlet weak var likeImg: UIImageView!
     
     var post: Post!
-    //we are storing the request since we are using cache, so we can cancel the requestb at any time
-    var request: Request?
+    //we are storing the request since we are using cache, so we can cancel the rVequestb at any time
+    //var request: Request?
+    
+    var likedPostRef: FIRDatabaseReference!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,6 +45,7 @@ class FeedCell: UITableViewCell {
     
     func configureCell(post: Post, img: UIImage? = nil) {
         self.post = post
+        likedPostRef = DataService.ds.REF_USRE_CURRENT.child("likes").child(post.postKey)
         self.descriptionText.text = post.postDescription
         self.likesLbl.text = "\(post.likes)"
         
@@ -59,14 +63,22 @@ class FeedCell: UITableViewCell {
                             if let img = UIImage(data: imgData) {
                                 self.postImg.image = img
                                 FeedVC.imageCache.setObject(img, forKey: post.imageUrl!)
+                                print("doanloaded image added to cache")
                             }
                         }
-                    }
+                      }
                 })
             }
 
-        }
-            
+          }
+        
+        likedPostRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            if let postDoesNotExist = snapshot.value as? NSNull {
+                self.likeImg.image = UIImage(named: "heart-empty")
+            } else {
+                self.likeImg.image = UIImage(named: "heart-full")
+            }
+        })
         
     }
 

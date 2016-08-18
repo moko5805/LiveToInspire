@@ -235,25 +235,28 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="moko5805" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="aCj-I4-UkU">
-                                                                            <rect key="frame" x="60" y="0.0" width="28" height="50"/>
+                                                                            <rect key="frame" x="60" y="0.0" width="26" height="50"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="26" id="Mfm-jM-Z6e"/>
+                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                                             <color key="textColor" red="1" green="0.38823529410000002" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="DRZ-RG-YV4">
-                                                                            <rect key="frame" x="98" y="0.0" width="47" height="50"/>
+                                                                            <rect key="frame" x="96" y="0.0" width="47" height="50"/>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qvT-0S-ENn">
-                                                                            <rect key="frame" x="154" y="0.0" width="166" height="50"/>
+                                                                            <rect key="frame" x="153" y="0.0" width="168" height="50"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1444" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpS-5P-2d4">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="166" height="24"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="168" height="27"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhW-TW-nWy">
-                                                                                    <rect key="frame" x="0.0" y="24" width="166" height="27"/>
+                                                                                    <rect key="frame" x="0.0" y="27" width="168" height="24"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                                                                     <color key="textColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -307,9 +310,11 @@
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="descriptionText" destination="g76-SC-ndP" id="xwJ-Ih-dwy"/>
+                                            <outlet property="likeImg" destination="DRZ-RG-YV4" id="Zva-Va-Jhi"/>
                                             <outlet property="likesLbl" destination="WpS-5P-2d4" id="9U7-ng-B0P"/>
                                             <outlet property="postImg" destination="Scg-gw-bk8" id="ytj-ri-rlP"/>
                                             <outlet property="profileImage" destination="mIF-rx-ohB" id="XtU-a4-bYD"/>
+                                            <outlet property="usernameLbl" destination="aCj-I4-UkU" id="C0I-Ey-BGp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -346,7 +351,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2202" y="-84"/>
+            <point key="canvasLocation" x="2050" y="-84"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cT6-Wz-IUH">
