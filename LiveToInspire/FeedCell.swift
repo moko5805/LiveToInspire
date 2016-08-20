@@ -27,6 +27,11 @@ class FeedCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
+        tap.numberOfTapsRequired = 1
+        likeImg.addGestureRecognizer(tap)
+        likeImg.userInteractionEnabled = true
+        
     }
     
     override func drawRect(rect: CGRect) {
@@ -63,7 +68,7 @@ class FeedCell: UITableViewCell {
                             if let img = UIImage(data: imgData) {
                                 self.postImg.image = img
                                 FeedVC.imageCache.setObject(img, forKey: post.imageUrl!)
-                                print("doanloaded image added to cache")
+                                print("downloaded image added to cache")
                             }
                         }
                       }
@@ -73,16 +78,41 @@ class FeedCell: UITableViewCell {
           }
         
         likedPostRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-            if let postDoesNotExist = snapshot.value as? NSNull {
+            
+            if (snapshot.value as? NSNull) != nil {
+                //This means we have not liked this specific post with this specific post key
                 self.likeImg.image = UIImage(named: "heart-empty")
             } else {
                 self.likeImg.image = UIImage(named: "heart-full")
             }
         })
+    }
+    
+    func likeTapped(sender: UITapGestureRecognizer){
+        likedPostRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            
+            if (snapshot.value as? NSNull) != nil {
+                //This means we have not liked this specific post with this specific post key
+                self.likeImg.image = UIImage(named: "heart-full")
+                self.post.adjustLikes(true)
+                self.likedPostRef.setValue(true)
+                
+            } else {
+                self.likeImg.image = UIImage(named: "heart-empty")
+                self.post.adjustLikes(false)
+                self.likedPostRef.removeValue()
+            }
+        })
+        
         
     }
 
 }
+
+
+
+
+
 
 
 

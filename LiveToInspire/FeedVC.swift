@@ -1,4 +1,3 @@
-//
 //  FeedVC.swift
 //  LiveToInspire
 //
@@ -25,6 +24,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
+
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -40,6 +41,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     //print("SNAP: \(snap)")
                     
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                        //see comment "IMPORTANT"
                         let Key = snap.key
                         let post = Post(postKey: Key, dictionary: postDict)
                         self.posts.append(post)
@@ -148,6 +150,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         "likes": 0
         ]
         
+        //IMPORTANT: create a unique ID for your new post "Post Key", which can be retrieved later using "snap.key" and the value result can be assigned to var postKey of Post object and get the location to it for your reference
         let firNewPostRef = DataService.ds.REF_POSTS.childByAutoId()
         firNewPostRef.setValue(post)
         
@@ -158,21 +161,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         tableView.reloadData()
     }
     
+    @IBAction func signoutTapped(sender: AnyObject) {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(KEY_UID)
+        print("user uid removed from the disk")
+        try! FIRAuth.auth()?.signOut()
+        performSegueWithIdentifier("goToSignInpage", sender: nil)
+    }
     
-    
- 
-    
-    
-    
-    
-    
-    
-//    @IBAction func signoutTapped(sender: AnyObject) {
-//        NSUserDefaults.standardUserDefaults().removeObjectForKey(KEY_UID)
-//        print("user uid removed from the disk")
-//        try! FIRAuth.auth()?.signOut()
-//        performSegueWithIdentifier("goToSignInpage", sender: nil)
-//    }
-//    
 
 }
