@@ -40,7 +40,7 @@
 		06ADA7251D681E4E0017C16F /* ExtensionFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionFuncs.swift; sourceTree = "<group>"; };
 		06EAFA131D554D0E007DD4F3 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		06EB15C31D48723C006218AA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		06EC673E1D45361D0032ECC8 /* LiveToInspire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveToInspire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06EC673E1D45361D0032ECC8 /* Inspire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inspire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06EC67411D45361D0032ECC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06EC67431D45361D0032ECC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		06EC67461D45361D0032ECC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		06EC673F1D45361D0032ECC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				06EC673E1D45361D0032ECC8 /* LiveToInspire.app */,
+				06EC673E1D45361D0032ECC8 /* Inspire.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,9 +201,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		06EC673D1D45361D0032ECC8 /* LiveToInspire */ = {
+		06EC673D1D45361D0032ECC8 /* Inspire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06EC67501D45361D0032ECC8 /* Build configuration list for PBXNativeTarget "LiveToInspire" */;
+			buildConfigurationList = 06EC67501D45361D0032ECC8 /* Build configuration list for PBXNativeTarget "Inspire" */;
 			buildPhases = (
 				5055B0A0297987BB196F8A3C /* [CP] Check Pods Manifest.lock */,
 				06EC673A1D45361D0032ECC8 /* Sources */,
@@ -216,9 +216,9 @@
 			);
 			dependencies = (
 			);
-			name = LiveToInspire;
+			name = Inspire;
 			productName = LiveToInspire;
-			productReference = 06EC673E1D45361D0032ECC8 /* LiveToInspire.app */;
+			productReference = 06EC673E1D45361D0032ECC8 /* Inspire.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -237,7 +237,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 06EC67391D45361D0032ECC8 /* Build configuration list for PBXProject "LiveToInspire" */;
+			buildConfigurationList = 06EC67391D45361D0032ECC8 /* Build configuration list for PBXProject "Inspire" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -250,7 +250,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				06EC673D1D45361D0032ECC8 /* LiveToInspire */,
+				06EC673D1D45361D0032ECC8 /* Inspire */,
 			);
 		};
 /* End PBXProject section */
@@ -462,7 +462,7 @@
 				INFOPLIST_FILE = LiveToInspire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LiveToInspire;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Inspire;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -482,7 +482,7 @@
 				INFOPLIST_FILE = LiveToInspire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LiveToInspire;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Inspire;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -490,7 +490,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		06EC67391D45361D0032ECC8 /* Build configuration list for PBXProject "LiveToInspire" */ = {
+		06EC67391D45361D0032ECC8 /* Build configuration list for PBXProject "Inspire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06EC674E1D45361D0032ECC8 /* Debug */,
@@ -499,7 +499,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06EC67501D45361D0032ECC8 /* Build configuration list for PBXNativeTarget "LiveToInspire" */ = {
+		06EC67501D45361D0032ECC8 /* Build configuration list for PBXNativeTarget "Inspire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06EC67511D45361D0032ECC8 /* Debug */,
