@@ -34,13 +34,14 @@ class ViewController: UIViewController {
         
         let facebookLogin = FBSDKLoginManager()
         
-        facebookLogin.logInWithReadPermissions(["email"], fromViewController: self) { (result, error) in
+        facebookLogin.logInWithReadPermissions(["public_profile","email"], fromViewController: self) { (result, error) in
             if error != nil {
                 print("Unable to authenticate with Facebook - \(error)")
             } else if result.isCancelled == true {
                 print("user canceled Facebook authentication")
             } else {
                 print("Successfully autheticated with Facebook")
+                print("result\(result)")
                 let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
                 //now that we authenticated with FB let's authenticate with Firebase
                 self.firebaseAuthenticate(credential)

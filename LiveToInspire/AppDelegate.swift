@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         FIRApp.configure()
+        
+        NSThread.sleepForTimeInterval(3)
 
         return true
     }

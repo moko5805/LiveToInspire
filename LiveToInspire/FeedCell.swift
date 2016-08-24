@@ -51,6 +51,7 @@ class FeedCell: UITableViewCell {
     func configureCell(post: Post, img: UIImage? = nil) {
         self.post = post
         likedPostRef = DataService.ds.REF_USRE_CURRENT.child("likes").child(post.postKey)
+        
         self.descriptionText.text = post.postDescription
         self.likesLbl.text = "\(post.likes)"
         
