@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FBSDKCoreKit
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -161,10 +162,21 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         tableView.reloadData()
     }
     
-    @IBAction func signoutTapped(sender: AnyObject) {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey(KEY_UID)
-        print("user uid removed from the disk")
-        try! FIRAuth.auth()?.signOut()
+//    @IBAction func signoutTapped(sender: AnyObject) {
+//        NSUserDefaults.standardUserDefaults().removeObjectForKey(KEY_UID)
+//        print("user uid removed from the disk")
+//        try! FIRAuth.auth()?.signOut()
+//        performSegueWithIdentifier("goToSignInpage", sender: nil)
+//    }
+    
+    @IBAction func didTapSignOut(sender: AnyObject) {
+        
+        //signs thee user out of the Firebase app
+        try! FIRAuth.auth()!.signOut()
+        
+        //sing the user out of the Facebook app
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+        
         performSegueWithIdentifier("goToSignInpage", sender: nil)
     }
     

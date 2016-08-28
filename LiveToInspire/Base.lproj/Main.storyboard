@@ -137,11 +137,101 @@
                         <outlet property="emailFiled" destination="n7R-rG-leB" id="XNe-0a-rWz"/>
                         <outlet property="passwordField" destination="J5i-pb-6zk" id="pvl-PC-GUN"/>
                         <segue destination="8BU-f8-Krc" kind="showDetail" identifier="loggedin" id="UTu-R0-fNE"/>
+                        <segue destination="VOV-0D-cRv" kind="show" identifier="testVC" id="zIH-G9-cbf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="739" y="-84"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="Ffr-33-Y4e">
+            <objects>
+                <viewController id="VOV-0D-cRv" customClass="testViewController" customModule="Inspire" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w5N-1L-8XW"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Kn-dM-FHh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VcA-9j-w2F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SiY-ie-l6L">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7Yn-3O-fJB"/>
+                                    <constraint firstAttribute="height" constant="200" id="osY-vf-BUn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXC-oo-qhx">
+                                <rect key="frame" x="200" y="425" width="200" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9Lc-GH-15S"/>
+                                    <constraint firstAttribute="height" constant="39" id="mDz-9V-LB5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFG-kp-Vqm">
+                                <rect key="frame" x="200" y="472" width="200" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="8gJ-XN-SPG"/>
+                                    <constraint firstAttribute="width" constant="200" id="aF9-LQ-2LG"/>
+                                    <constraint firstAttribute="width" constant="200" id="gvw-ZP-Ybn"/>
+                                    <constraint firstAttribute="height" constant="39" id="w5o-xd-0tU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gvw-ZP-Ybn"/>
+                                        <exclude reference="w5o-xd-0tU"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User uid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DN-ys-Jhc">
+                                <rect key="frame" x="200" y="519" width="200" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="T6y-zW-MY0"/>
+                                    <constraint firstAttribute="width" constant="200" id="WYI-lD-kkE"/>
+                                    <constraint firstAttribute="height" constant="39" id="cbj-2b-vkV"/>
+                                    <constraint firstAttribute="width" constant="200" id="esB-gI-Wbi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cbj-2b-vkV"/>
+                                        <exclude reference="esB-gI-Wbi"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NXC-oo-qhx" firstAttribute="top" secondItem="SiY-ie-l6L" secondAttribute="bottom" constant="25" id="9VV-zV-eC6"/>
+                            <constraint firstItem="wFG-kp-Vqm" firstAttribute="centerX" secondItem="VcA-9j-w2F" secondAttribute="centerX" id="BSh-Vz-CdK"/>
+                            <constraint firstItem="wFG-kp-Vqm" firstAttribute="top" secondItem="NXC-oo-qhx" secondAttribute="bottom" constant="8" id="MrZ-u2-QL9"/>
+                            <constraint firstItem="8DN-ys-Jhc" firstAttribute="centerX" secondItem="VcA-9j-w2F" secondAttribute="centerX" id="YCl-Mb-t9w"/>
+                            <constraint firstItem="SiY-ie-l6L" firstAttribute="centerX" secondItem="VcA-9j-w2F" secondAttribute="centerX" id="bts-YP-cR7"/>
+                            <constraint firstItem="SiY-ie-l6L" firstAttribute="centerY" secondItem="VcA-9j-w2F" secondAttribute="centerY" id="ddA-6J-igG"/>
+                            <constraint firstItem="NXC-oo-qhx" firstAttribute="centerX" secondItem="VcA-9j-w2F" secondAttribute="centerX" id="qUS-Yl-Mh0"/>
+                            <constraint firstItem="8DN-ys-Jhc" firstAttribute="top" secondItem="wFG-kp-Vqm" secondAttribute="bottom" constant="8" id="xyz-8V-rNn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fbDisplayName" destination="NXC-oo-qhx" id="TJA-2W-YYf"/>
+                        <outlet property="fbEmail" destination="wFG-kp-Vqm" id="7r9-A3-6n9"/>
+                        <outlet property="fbProfilePic" destination="SiY-ie-l6L" id="dxl-4q-XwI"/>
+                        <outlet property="firebaseUserUid" destination="8DN-ys-Jhc" id="nmd-dQ-Ln8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I49-6i-4a8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="739" y="685"/>
         </scene>
         <!--FeedVC-->
         <scene sceneID="5dO-8P-gbb">
