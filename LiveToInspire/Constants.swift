@@ -30,6 +30,21 @@ let STATUS_CODE_ACCOUNT_NONEXIST = -8
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //@IBAction func attemptLogin(sender: UIButton!) {
 //    
 //    if let email = emailFiled.text where email != "", let pwd = passwordField.text where pwd != "" {
@@ -81,3 +96,44 @@ let STATUS_CODE_ACCOUNT_NONEXIST = -8
 //    }
 //    
 //}
+
+//    func completeSignIn(userUid: String, userData: Dictionary<String, String>) {
+//
+//        DataService.ds.createFirebaseDBUser(userUid, userData: userData)
+//
+//        NSUserDefaults.standardUserDefaults().setValue(userUid, forKey: KEY_UID)
+//        print("Data/user uid was saved to the disk")
+//        performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+//    }
+
+
+
+
+//    @IBAction func attemptLogin(sender: UIButton!) {
+//
+//        if let email = emailFiled.text where email != "", let pwd = passwordField.text where pwd != "" {
+//            FIRAuth.auth()?.signInWithEmail(email, password: pwd, completion: { (user, error) in
+//                if error == nil {
+//                    print("email user authenticated with Firebase")
+//                    if let user = user {
+//                        let userDate = ["provider": user.providerID]
+//                        self.completeSignIn(user.uid, userData: userDate)
+//                    }
+//                } else {
+//                    FIRAuth.auth()?.createUserWithEmail(email, password: pwd, completion: { (user, error) in
+//                        if error != nil {
+//                            print("unable to authenticated email using with Firebase")
+//                        } else {
+//                            print("successfully created new user and authenticated with Firebase")
+//                            if let user = user {
+//                                let userData = ["provider": user.providerID]
+//                                self.completeSignIn(user.uid, userData: userData)
+//                            }
+//
+//                        }
+//                    })
+//                }
+//            })
+//        }
+//
+//    }

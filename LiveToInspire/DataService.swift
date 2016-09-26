@@ -17,15 +17,15 @@ class DataService {
     static let ds = DataService()
     
     //DB references
-    private var _REF_BASE = DB_BASE
-    private var _REF_POSTS = DB_BASE.child("posts")
-    private var _REF_USRES = DB_BASE.child("users")
-    private var _REF_COMMENTS = DB_BASE.child("comments")
-    private var _REF_USER_PROFILES = DB_BASE.child("user profiles")
+    private  var _REF_BASE = DB_BASE
+    private  var _REF_POSTS = DB_BASE.child("posts")
+    private  var _REF_USRES = DB_BASE.child("users")
+    private  var _REF_COMMENTS = DB_BASE.child("comments")
+    private  var _REF_USER_PROFILES = DB_BASE.child("user profiles")
     
     //storage references
-    private var _REF_POST_IMAGES = DB_STORAGE.child("post-pics")
-    private var _REF_PROFILE_IMAGES = DB_STORAGE.child("profile-pics")
+    private  var _REF_POST_IMAGES = DB_STORAGE.child("post-pics")
+    private  var _REF_PROFILE_IMAGES = DB_STORAGE.child("profile-pics")
     
     var REF_BASE: FIRDatabaseReference {
         return _REF_BASE
@@ -60,6 +60,10 @@ class DataService {
         return _REF_POST_IMAGES
     }
     
+    var REF_PROFILE_IMAGES: FIRStorageReference {
+        return _REF_PROFILE_IMAGES
+    }
+    
     //this is where you write a newly singed up user to your databse/firebase
     func createFirebaseDBUser(uid: String, userData: Dictionary<String, String>) {
         REF_USRES.child(uid).updateChildValues(userData)
@@ -68,6 +72,15 @@ class DataService {
     func createFirebaseUserProfile(uid: String, userData: Dictionary<String, String>) {
         REF_USER_PROFILES.child(uid).updateChildValues(userData)
     }
+    
+    func returnCurrentUsername() -> String {
+        
+        let user = FIRAuth.auth()?.currentUser
+        let userName = user!.displayName
+        
+        return userName!
+    }
+    
     
 }
 

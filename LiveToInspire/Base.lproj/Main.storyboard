@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -136,7 +136,7 @@
                     <connections>
                         <outlet property="emailFiled" destination="n7R-rG-leB" id="XNe-0a-rWz"/>
                         <outlet property="passwordField" destination="J5i-pb-6zk" id="pvl-PC-GUN"/>
-                        <segue destination="8BU-f8-Krc" kind="showDetail" identifier="loggedin" id="UTu-R0-fNE"/>
+                        <segue destination="VuS-Fk-ZIM" kind="showDetail" identifier="loggedin" id="UTu-R0-fNE"/>
                         <segue destination="VOV-0D-cRv" kind="show" identifier="testVC" id="zIH-G9-cbf"/>
                     </connections>
                 </viewController>
@@ -144,7 +144,7 @@
             </objects>
             <point key="canvasLocation" x="739" y="-84"/>
         </scene>
-        <!--Test View Controller-->
+        <!--Profile-->
         <scene sceneID="Ffr-33-Y4e">
             <objects>
                 <viewController id="VOV-0D-cRv" customClass="testViewController" customModule="Inspire" customModuleProvider="target" sceneMemberID="viewController">
@@ -222,6 +222,7 @@
                             <constraint firstItem="8DN-ys-Jhc" firstAttribute="top" secondItem="wFG-kp-Vqm" secondAttribute="bottom" constant="8" id="xyz-8V-rNn"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="smiley" id="AoF-Mf-NJs"/>
                     <connections>
                         <outlet property="fbDisplayName" destination="NXC-oo-qhx" id="TJA-2W-YYf"/>
                         <outlet property="fbEmail" destination="wFG-kp-Vqm" id="7r9-A3-6n9"/>
@@ -233,7 +234,7 @@
             </objects>
             <point key="canvasLocation" x="739" y="685"/>
         </scene>
-        <!--FeedVC-->
+        <!--Home-->
         <scene sceneID="5dO-8P-gbb">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="8BU-f8-Krc" customClass="FeedVC" customModule="Inspire" customModuleProvider="target" sceneMemberID="viewController">
@@ -465,6 +466,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-1" id="zYe-i1-8m1"/>
                     <navigationItem key="navigationItem" id="uBH-FU-rQ4"/>
                     <connections>
                         <outlet property="imageSelectorImage" destination="nca-X8-hEa" id="EBd-14-dGm"/>
@@ -480,6 +482,24 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="2370" y="-91"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="qWq-3W-VEX">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="VuS-Fk-ZIM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="alM-G9-hFB">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8BU-f8-Krc" kind="relationship" relationship="viewControllers" id="zOf-GK-h03"/>
+                        <segue destination="VOV-0D-cRv" kind="relationship" relationship="viewControllers" id="nZ1-D0-AQb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4tc-oQ-uJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="1558" y="-91"/>
         </scene>
     </scenes>
@@ -488,6 +508,11 @@
         <image name="Mokoli" width="722" height="1104"/>
         <image name="camera" width="50" height="50"/>
         <image name="heart-empty" width="150" height="147"/>
+        <image name="home-1" width="24" height="24"/>
         <image name="inspire" width="900" height="584"/>
+        <image name="smiley" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nZ1-D0-AQb"/>
+    </inferredMetricsTieBreakers>
 </document>

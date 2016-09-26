@@ -10,9 +10,11 @@
 		060DD7A81D53AA3A0010D856 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060DD7A71D53AA3A0010D856 /* DataService.swift */; };
 		0628D8F01D4CEEEB00E56F88 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0628D8EF1D4CEEEB00E56F88 /* FeedVC.swift */; };
 		0628D8F21D4D00A900E56F88 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0628D8F11D4D00A900E56F88 /* FeedCell.swift */; };
-		063FE0901D724A8D00957B7A /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FE08F1D724A8D00957B7A /* testViewController.swift */; };
+		063FE0901D724A8D00957B7A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FE08F1D724A8D00957B7A /* ProfileViewController.swift */; };
 		0663C0411D568A7A00C65216 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0663C0401D568A7A00C65216 /* MaterialView.swift */; };
 		06ADA7261D681E4E0017C16F /* ExtensionFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ADA7251D681E4E0017C16F /* ExtensionFuncs.swift */; };
+		06D81DDD1D98C1C100C22D64 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D81DDC1D98C1C100C22D64 /* EditProfileTableViewController.swift */; };
+		06D81DDF1D98C56300C22D64 /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D81DDE1D98C56300C22D64 /* EditProfileCell.swift */; };
 		06EAFA141D554D0E007DD4F3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EAFA131D554D0E007DD4F3 /* Post.swift */; };
 		06EB15C41D48723C006218AA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EB15C31D48723C006218AA /* FBSDKCoreKit.framework */; };
 		06EC67421D45361D0032ECC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EC67411D45361D0032ECC8 /* AppDelegate.swift */; };
@@ -37,9 +39,11 @@
 		060DD7A71D53AA3A0010D856 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		0628D8EF1D4CEEEB00E56F88 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		0628D8F11D4D00A900E56F88 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
-		063FE08F1D724A8D00957B7A /* testViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		063FE08F1D724A8D00957B7A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0663C0401D568A7A00C65216 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		06ADA7251D681E4E0017C16F /* ExtensionFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionFuncs.swift; sourceTree = "<group>"; };
+		06D81DDC1D98C1C100C22D64 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
+		06D81DDE1D98C56300C22D64 /* EditProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
 		06EAFA131D554D0E007DD4F3 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		06EB15C31D48723C006218AA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		06EC673E1D45361D0032ECC8 /* Inspire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inspire.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,7 @@
 				06EC67711D46E2A30032ECC8 /* MaterialButton.swift */,
 				0628D8F11D4D00A900E56F88 /* FeedCell.swift */,
 				0663C0401D568A7A00C65216 /* MaterialView.swift */,
+				06D81DDE1D98C56300C22D64 /* EditProfileCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -141,7 +146,8 @@
 			children = (
 				06EC67431D45361D0032ECC8 /* ViewController.swift */,
 				0628D8EF1D4CEEEB00E56F88 /* FeedVC.swift */,
-				063FE08F1D724A8D00957B7A /* testViewController.swift */,
+				063FE08F1D724A8D00957B7A /* ProfileViewController.swift */,
+				06D81DDC1D98C1C100C22D64 /* EditProfileTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -335,11 +341,13 @@
 				06EC67421D45361D0032ECC8 /* AppDelegate.swift in Sources */,
 				06EC67701D46DDD60032ECC8 /* MaterialTextField.swift in Sources */,
 				06EC676E1D46DD160032ECC8 /* Constants.swift in Sources */,
-				063FE0901D724A8D00957B7A /* testViewController.swift in Sources */,
+				063FE0901D724A8D00957B7A /* ProfileViewController.swift in Sources */,
 				06ADA7261D681E4E0017C16F /* ExtensionFuncs.swift in Sources */,
 				06EAFA141D554D0E007DD4F3 /* Post.swift in Sources */,
+				06D81DDF1D98C56300C22D64 /* EditProfileCell.swift in Sources */,
 				0663C0411D568A7A00C65216 /* MaterialView.swift in Sources */,
 				06EC67721D46E2A30032ECC8 /* MaterialButton.swift in Sources */,
+				06D81DDD1D98C1C100C22D64 /* EditProfileTableViewController.swift in Sources */,
 				060DD7A81D53AA3A0010D856 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
