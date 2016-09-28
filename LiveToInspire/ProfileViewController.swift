@@ -17,10 +17,6 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.fbProfilePic.layer.cornerRadius = self.fbProfilePic.frame.size.width/2
-        
-        self.fbProfilePic.clipsToBounds = true
-        
         if let user = FIRAuth.auth()?.currentUser {
             let name = user.displayName
             //let email = user.email
@@ -65,6 +61,14 @@ class ProfileViewController: UIViewController {
         }
         
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.fbProfilePic.layer.cornerRadius = self.fbProfilePic.frame.size.width/2
+        
+        self.fbProfilePic.clipsToBounds = true
     }
     
     func downloadUploadProfilePic(uid: String) {

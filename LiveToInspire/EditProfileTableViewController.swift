@@ -9,7 +9,10 @@
 import UIKit
 import Firebase
 
-class EditProfileTableViewController: UITableViewController, UINavigationControllerDelegate {
+class EditProfileTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profilePic: UIImageView!
     
     var about = ["DisplayName","Gender", "Age", "Phone", "Email", "Website", "Bio"]
     
@@ -18,7 +21,11 @@ class EditProfileTableViewController: UITableViewController, UINavigationControl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        //what is this for?
+        tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         
         DataService.ds.REF_USER_PROFILES.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
             
@@ -63,18 +70,24 @@ class EditProfileTableViewController: UITableViewController, UINavigationControl
         })
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width/2
+        self.profilePic.clipsToBounds = true
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return about.count
     }
     
-    
-    func tableView(tableView: UITableView, cellForRowAt indexPath: NSIndexPath) -> UITableViewCell {
+    func  tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("EditProfileCell", forIndexPath: indexPath) as! EditProfileCell
         
