@@ -20,23 +20,39 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loginButton.delegate = self
+        
         self.loginButton.hidden = true
         
         self.hideKeyboardWhenTappedAround()
+        
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.loginButton.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+
         
-        let user = FIRAuth.auth()?.currentUser
-        
-            if user != nil {
+        FIRAuth.auth()?.addAuthStateDidChangeListener({ (auth, user) in
+            
+            if let user = user {
                 // User is signed in. send the user to home screen
+                
+                self.loginButton.hidden = true
+                
+                print("USER IS FUCKING SIGNED IN")
                 
                 self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                 
             } else {
                 // No user is signed in. Show the user login page
+                print("USER IS NOT SIGNED IN BABA JOON")
                 
                 self.loginButton.readPermissions = ["public_profile", "email", "user_friends"]
                 self.loginButton.delegate = self
@@ -44,6 +60,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 self.loginButton.hidden = false
             }
+            
+        })
+        
         
         self.loginButton.frame = CGRect(x: 73, y: 480, width: 230, height: 30)
         
@@ -54,6 +73,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         
+        self.loginButton.hidden = true
+
         if error != nil {
             //handle errors here
             print("Unable to authenticate with Facebook - \(error)")
@@ -68,7 +89,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             
             print("User Logged In")
             
-            self.loginButton.hidden = true
+            self.loginButton.hidden = false
             
             //now that we authenticated with FB let's authenticate with Firebase
             let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)

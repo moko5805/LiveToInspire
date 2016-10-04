@@ -1,4 +1,4 @@
-//
+
 //  EditProfileTableViewController.swift
 //  Inspire
 //
@@ -9,12 +9,12 @@
 import UIKit
 import Firebase
 
-class EditProfileTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
+class EditProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profilePic: UIImageView!
     
-    var about = ["DisplayName","Gender", "Age", "Phone", "Email", "Website", "Bio"]
+    var about = ["DisplayName","Gender", "Age", "Phone","Website"]
     
     let user = FIRAuth.auth()?.currentUser
     
@@ -24,40 +24,41 @@ class EditProfileTableViewController: UIViewController, UITableViewDelegate, UIT
         tableView.delegate = self
         tableView.dataSource = self
         
-        //what is this for?
         tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         
         DataService.ds.REF_USER_PROFILES.observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
             
             let usersDict = snapshot.value as! NSDictionary
+            
+            //just for the purpose of development. I shall come back here and delete this print command
             print(usersDict)
             
-            //to capture the data associated to this particular UID
+            //to capture the data associated to the current user (the user logged in NOW)
             let userDetails = usersDict.objectForKey(self.user!.uid)
-            print(userDetails)
+            
+            print("User Details: \(userDetails)")
             
             for index in 0...self.about.count {
                 
                 let indexpath = NSIndexPath(forRow: index, inSection: 0)
                 if let cell = self.tableView.cellForRowAtIndexPath(indexpath) as? EditProfileCell {
                     
-                    let field = (cell.myTextField.placeholder?.lowercaseString)!
+                    let placeholder = (cell.myTextField.placeholder)!
                     
-                    switch field {
-                    case "displayname":
-                        cell.configureCell((userDetails! as AnyObject).objectForKey("displayname") as? String, placeholder: "Display Name")
-                    case "gender":
+                    switch placeholder {
+                        
+                    case "DisplayName":
+                        cell.configureCell((userDetails! as AnyObject).objectForKey("displayname") as? String, placeholder: "DisplayName")
+                    case "Gender":
                         cell.configureCell((userDetails! as AnyObject).objectForKey("gender") as? String, placeholder: "Gender")
-                    case "age":
+                    case "Age":
                         cell.configureCell((userDetails! as AnyObject).objectForKey("age") as? String, placeholder: "Age")
-                    case "phone":
+                    case "Phone":
                         cell.configureCell((userDetails! as AnyObject).objectForKey("phone") as? String, placeholder: "Phone")
-                    case "email":
-                        cell.configureCell((userDetails! as AnyObject).objectForKey("email") as? String, placeholder: "Emial")
-                    case "website":
+                    //case "Email":
+                   // cell.configureCell((userDetails! as AnyObject).objectForKey("email") as? String, placeholder: "Emial")
+                    case "Website":
                         cell.configureCell((userDetails! as AnyObject).objectForKey("website") as? String, placeholder: "Website")
-                    case "bio":
-                        cell.configureCell((userDetails! as AnyObject).objectForKey("bio") as? String, placeholder: "Bio")
                         
                     default:
                         ""
@@ -87,18 +88,21 @@ class EditProfileTableViewController: UIViewController, UITableViewDelegate, UIT
         return about.count
     }
     
-    func  tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func  tableView(tableView: UITableView, cellForRowAtIndexPath IndexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("EditProfileCell", forIndexPath: indexPath) as! EditProfileCell
+        let placeholder = about[IndexPath.row]
         
-        cell.configureCell("", placeholder: "\(about[(indexPath as NSIndexPath).row])")
+        if let cell = tableView.dequeueReusableCellWithIdentifier("EditProfileCell") as? EditProfileCell {
         
-        return cell
-    }
-    
-    @IBAction func onCancelTapped(sender: AnyObject) {
+            cell.configureCell("", placeholder: placeholder)
+            
+            return cell
+            
+        } else {
+            
+            return EditProfileCell()
+        }
         
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func didTapUpdate(sender: AnyObject) {
@@ -108,30 +112,29 @@ class EditProfileTableViewController: UIViewController, UITableViewDelegate, UIT
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
             if let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? EditProfileCell {
                 
-                if let item = cell.myTextField.text  where item != "" {
+                if let data = cell.myTextField.text  where data != "" {
                     
+                    //let's say you are at the very first loop where index = 0
+                    // switch about[0] which is equal to 'DisplayName"
                     switch about[index] {
                         
                     case "DisplayName":
-                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/displayname").setValue(item)
+                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/displayname").setValue(data)
                         
                     case "Gender":
-                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/gender").setValue(item)
+                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/gender").setValue(data)
                         
                     case "Age":
-                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/age").setValue(item)
+                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/age").setValue(data)
                         
                     case "Phone":
-                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/phone").setValue(item)
+                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/phone").setValue(data)
                         
-                    case "Email":
-                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/email").setValue(item)
+                    //case "Email":
+                        //DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/email").setValue(data)
                         
                     case "Website":
-                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/website").setValue(item)
-                        
-                    case "Bio":
-                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/bio").setValue(item)
+                        DataService.ds.REF_USER_PROFILES.child("\(user!.uid)/website").setValue(data)
                         
                     default:
                         print("dont update")
@@ -139,7 +142,6 @@ class EditProfileTableViewController: UIViewController, UITableViewDelegate, UIT
                 }//end if
                 
             }
-            
             
         }
         

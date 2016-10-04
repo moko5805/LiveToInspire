@@ -19,6 +19,9 @@ let SEGUE_LOGGED_IN = "loggedin"
 
 //Status Codes
 let STATUS_CODE_ACCOUNT_NONEXIST = -8
+let ERROR_CODE_WEAK_PASSWORD = 17026
+let ERROR_CODE_INVALID_EMAIL = 17008
+let ERROR_CODE_EMAIL_IN_USE = 17007
 
 
 
@@ -72,7 +75,7 @@ let STATUS_CODE_ACCOUNT_NONEXIST = -8
 //                                FIRAuth.auth()?.signInWithEmail(email, password: pwd, completion: { (nil) in
 //                                    
 //                                })
-//                                print("created and authenticated Firebase user at this point")
+//                                
 //                                self.completeSignIn(user.uid, userData: userData)                                }
 //                        }
 //                    }

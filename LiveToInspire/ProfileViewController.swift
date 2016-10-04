@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 import FBSDKCoreKit
 
 class ProfileViewController: UIViewController {
@@ -40,7 +40,7 @@ class ProfileViewController: UIViewController {
                     
                     if data != nil {
                         
-                        print("user already has an image, no need to download from Facebook")
+                        print("user already has an image in Firebase, no need to download from Facebook")
                         self.fbProfilePic.image = UIImage(data: data!)
                     }
                     
@@ -59,7 +59,6 @@ class ProfileViewController: UIViewController {
             
             // No user is signed in.
         }
-        
         
     }
     
@@ -121,6 +120,9 @@ class ProfileViewController: UIViewController {
         
         //sign the user out of the Facebook app
         FBSDKAccessToken.setCurrentAccessToken(nil)
+        
+        let user = FIRAuth.auth()?.currentUser
+        print ("FUKCING USRE: \(user)")
         
         performSegueWithIdentifier("goToSignInpage", sender: nil)
 
